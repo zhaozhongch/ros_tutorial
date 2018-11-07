@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(pub_sub_test)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -134,6 +134,16 @@ add_executable(pub_string src/pub_string.cpp)
 target_link_libraries(pub_string ${catkin_LIBRARIES})
 add_executable(sub_string src/sub_string.cpp)
 target_link_libraries(sub_string ${catkin_LIBRARIES})
+
+add_executable(pub_int8 src/pub_int8.cpp)
+target_link_libraries(pub_int8 ${catkin_LIBRARIES})
+add_executable(sub_int8 src/sub_int8.cpp)
+target_link_libraries(sub_int8 ${catkin_LIBRARIES})
+
+add_executable(pub_array src/pub_array.cpp)
+target_link_libraries(pub_array ${catkin_LIBRARIES})
+add_executable(sub_array src/sub_array.cpp)
+target_link_libraries(sub_array ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
