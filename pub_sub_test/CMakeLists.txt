@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -144,6 +145,14 @@ add_executable(pub_array src/pub_array.cpp)
 target_link_libraries(pub_array ${catkin_LIBRARIES})
 add_executable(sub_array src/sub_array.cpp)
 target_link_libraries(sub_array ${catkin_LIBRARIES})
+
+add_executable(assignNumber_test src/assignNumber_test.cpp)
+target_link_libraries(assignNumber_test ${catkin_LIBRARIES})
+
+add_executable(pub_poseStamped src/pub_poseStamped.cpp)
+target_link_libraries(pub_poseStamped ${catkin_LIBRARIES})
+add_executable(sub_poseStamped src/sub_poseStamped.cpp)
+target_link_libraries(sub_poseStamped ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
