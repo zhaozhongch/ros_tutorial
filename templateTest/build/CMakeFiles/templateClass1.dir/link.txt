@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -Wall   CMakeFiles/templateClass1.dir/templateClass1.cpp.o  -o templateClass1 -rdynamic 

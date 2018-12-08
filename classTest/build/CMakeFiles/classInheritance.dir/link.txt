@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -Wall   CMakeFiles/classInheritance.dir/classInheritance.cpp.o  -o classInheritance -rdynamic 

@@ -1,0 +1,3 @@
+/home/zhaozhong/C++Test/ros_tutorial/namespaceTest/build/CMakeFiles/edit_cache.dir
+/home/zhaozhong/C++Test/ros_tutorial/namespaceTest/build/CMakeFiles/namespaceBasic.dir
+/home/zhaozhong/C++Test/ros_tutorial/namespaceTest/build/CMakeFiles/rebuild_cache.dir

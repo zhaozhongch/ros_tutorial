@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -Wall   CMakeFiles/testMultiDef.dir/testMultiDef.cpp.o  -o testMultiDef -rdynamic 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -Wall   CMakeFiles/classBasic2.dir/classBasic2.cpp.o  -o classBasic2 -rdynamic 
