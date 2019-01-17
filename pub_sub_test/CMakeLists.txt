@@ -153,6 +153,16 @@ add_executable(pub_poseStamped src/pub_poseStamped.cpp)
 target_link_libraries(pub_poseStamped ${catkin_LIBRARIES})
 add_executable(sub_poseStamped src/sub_poseStamped.cpp)
 target_link_libraries(sub_poseStamped ${catkin_LIBRARIES})
+
+add_executable(pub_int8_class src/pub_int8_class.cpp)
+target_link_libraries(pub_int8_class ${catkin_LIBRARIES})
+add_executable(sub_int8_class src/sub_int8_class.cpp)
+target_link_libraries(sub_int8_class ${catkin_LIBRARIES})
+
+add_executable(pubSub_class_example2A src/pubSub_class_example2A.cpp)
+target_link_libraries(pubSub_class_example2A ${catkin_LIBRARIES})
+add_executable(pubSub_class_example2B src/pubSub_class_example2B.cpp)
+target_link_libraries(pubSub_class_example2B ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
