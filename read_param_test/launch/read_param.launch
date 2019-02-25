@@ -1,0 +1,6 @@
+<launch>
+    <param name = "noise" type = "double" value = "10.0" />
+    <param name = "string_var" type = "string" value = "abc" />
+    <node name="read_param" pkg = "read_param_test" type = "read_param" output = "screen">
+    </node>
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+    <node name="pub_int8" pkg = "pub_sub_test" type = "pub_int8" output = "screen">
+    </node>
+</launch>
