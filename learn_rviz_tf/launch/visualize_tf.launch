@@ -1,0 +1,3 @@
+<launch>
+    <node name="rvizvisualization" pkg="rviz" type="rviz" output="log" args="-d $(find learn_rviz_tf)/config/visualize_tf.launch" />
+</launch>
