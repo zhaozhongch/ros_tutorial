@@ -19,10 +19,18 @@ int main(int argc, char **argv){
         ROS_INFO("string_var: %s", string_var.c_str());
     else
         ROS_WARN("No string_var name message");
+
+    std::vector<int> a_list;
+    if (nh.getParam("a_list",a_list))
+        ROS_INFO("get a_list");
+    else
+        ROS_WARN("didn't find a_list");
+        std::cout<<"list..."<<a_list[0]<<std::endl;
     
     std::vector<int> vector_var;
     if (nh.getParam("vector_var",vector_var))
         ROS_INFO("got vector");
     else
         ROS_WARN("didn't find vector");
+        std::cout<<"vector..."<<vector_var[0]<<std::endl;
 };
