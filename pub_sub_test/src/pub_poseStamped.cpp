@@ -28,9 +28,9 @@ int main(int argc, char **argv)
     while (ros::ok())
     {
         //We just make the position x,y,z all the same. The X,Y,Z increase linearly
-        positionX = count;
-        positionY = count;
-        positionZ = count;
+        positionX = 0.01*count;
+        positionY = 0.01*count;
+        positionZ = 0.01*count;
 
         geometry_msgs::PoseStamped msg; 
 

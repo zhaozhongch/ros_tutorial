@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pub_sub_test)
+project(my_custom_msgs)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+# add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-  geometry_msgs
   message_generation
+  message_runtime
+  std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -51,8 +49,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
 add_message_files(
   FILES
-  MyBasicMessage.msg
-  MyAdvancedMessage.msg
+  MyNewMsg.msg
+#   Message2.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -73,7 +71,6 @@ add_message_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
-  geometry_msgs
 )
 
 ################################################
@@ -106,10 +103,10 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-   INCLUDE_DIRS include
-   #LIBRARIES pub_sub_test
-  #CATKIN_DEPENDS message_runtime #roscpp rospy std_msgs
-  #DEPENDS system_lib
+#  INCLUDE_DIRS include
+#  LIBRARIES my_custom_msgs
+#  CATKIN_DEPENDS message_runtime
+#  DEPENDS system_lib
 )
 
 ###########
@@ -119,13 +116,13 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-  include
+# include
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/pub_sub_test.cpp
+#   src/${PROJECT_NAME}/my_custom_msgs.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,45 +130,10 @@ include_directories(
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(pub_string src/pub_string.cpp)
-target_link_libraries(pub_string ${catkin_LIBRARIES})
-add_executable(sub_string src/sub_string.cpp)
-target_link_libraries(sub_string ${catkin_LIBRARIES})
-
-add_executable(pub_int8 src/pub_int8.cpp)
-target_link_libraries(pub_int8 ${catkin_LIBRARIES})
-add_executable(sub_int8 src/sub_int8.cpp)
-target_link_libraries(sub_int8 ${catkin_LIBRARIES})
-
-add_executable(pub_array src/pub_array.cpp)
-target_link_libraries(pub_array ${catkin_LIBRARIES})
-add_executable(sub_array src/sub_array.cpp)
-target_link_libraries(sub_array ${catkin_LIBRARIES})
-
-add_executable(assignNumber_test src/assignNumber_test.cpp)
-target_link_libraries(assignNumber_test ${catkin_LIBRARIES})
-
-add_executable(pub_poseStamped src/pub_poseStamped.cpp)
-target_link_libraries(pub_poseStamped ${catkin_LIBRARIES})
-add_executable(sub_poseStamped src/sub_poseStamped.cpp)
-target_link_libraries(sub_poseStamped ${catkin_LIBRARIES})
-
-add_executable(pub_int8_class src/pub_int8_class.cpp)
-target_link_libraries(pub_int8_class ${catkin_LIBRARIES})
-add_executable(sub_int8_class src/sub_int8_class.cpp)
-target_link_libraries(sub_int8_class ${catkin_LIBRARIES})
-
-add_executable(pubSub_class_example2A src/pubSub_class_example2A.cpp)
-target_link_libraries(pubSub_class_example2A ${catkin_LIBRARIES})
-add_executable(pubSub_class_example2B src/pubSub_class_example2B.cpp)
-target_link_libraries(pubSub_class_example2B ${catkin_LIBRARIES})
-
-add_executable(pub_my_basic_message src/pub_my_basic_message.cpp)
-target_link_libraries(pub_my_basic_message ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/pub_sub_test_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/my_custom_msgs_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -228,7 +190,7 @@ target_link_libraries(pub_my_basic_message ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_pub_sub_test.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_my_custom_msgs.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
